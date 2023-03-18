@@ -22,6 +22,8 @@ import {
   COMMERCIAL_TRANS,
   CUSTOMER_CATEGORY_TRANS,
   ELECTRICITY_TRANS,
+  MONTH_LISTS_TRANS,
+  MONTH_TRANS,
   RESIDENTIAL_TRANS,
   RESIDENT_NAME_TRANS,
   UNIT_USAGE_TRANS,
@@ -32,6 +34,7 @@ export default function CustomForm() {
   const dispatch = useDispatch();
   const [billType, setBillType] = React.useState("");
   const [residentName, setResidentName] = React.useState("");
+  const [month, setMonth] = React.useState("");
   const [apartment, setApartment] = React.useState("");
   const [unitUsage, setUnitUsage] = React.useState(0);
   const [customerCategory, setCustomerCategory] = React.useState("");
@@ -43,6 +46,10 @@ export default function CustomForm() {
     customerCategory
   );
 
+  const monthListTrans = Object.entries(
+    MONTH_LISTS_TRANS[nameReducer.language]
+  );
+
   const handleSubmit = () => {
     dispatch(
       setCustomerData({
@@ -50,6 +57,7 @@ export default function CustomForm() {
         residentName,
         apartment,
         unitUsage,
+        month,
         customerCategory,
         billOutput: {
           rows,
@@ -97,7 +105,7 @@ export default function CustomForm() {
             name="apartment"
             autoFocus
           />
-          <FormControl fullWidth>
+          <FormControl fullWidth sx={{ mt: 1 }}>
             <InputLabel id="demo-simple-select-label">
               {BILL_TYPE_TRANS[nameReducer.language]}
             </InputLabel>
@@ -114,13 +122,13 @@ export default function CustomForm() {
                   BILL_TRANS[nameReducer.language]}
               </MenuItem>
               <MenuItem value={BILL_TYPE_ENUM.WATER}>
-                {WATER_TRANS[nameReducer.language]+
+                {WATER_TRANS[nameReducer.language] +
                   " " +
                   BILL_TRANS[nameReducer.language]}
               </MenuItem>
             </Select>
           </FormControl>
-          <FormControl fullWidth>
+          <FormControl fullWidth sx={{ mt: 1 }}>
             <InputLabel id="demo-simple-select-label">
               {CUSTOMER_CATEGORY_TRANS[nameReducer.language]}
             </InputLabel>
@@ -137,6 +145,25 @@ export default function CustomForm() {
               <MenuItem value={BILL_CATEGORY.RESIDENTIAL}>
                 {RESIDENTIAL_TRANS[nameReducer.language]}
               </MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl fullWidth sx={{ mt: 1 }}>
+            <InputLabel id="demo-simple-select-label">
+              {MONTH_TRANS[nameReducer.language]}
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={month}
+              label="Month"
+              onChange={(e) => setMonth(e.target.value)}
+            >
+              {monthListTrans &&
+                monthListTrans.map((obj, index) => (
+                  <MenuItem key={index} value={obj[0]}>
+                    {obj[1]}
+                  </MenuItem>
+                ))}
             </Select>
           </FormControl>
           <TextField

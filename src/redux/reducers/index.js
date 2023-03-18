@@ -18,6 +18,7 @@ const INITIAL_STATE = {
     vat: 0,
     gTotal: 0,
   },
+  month: '',
   language: 'en'
 };
 

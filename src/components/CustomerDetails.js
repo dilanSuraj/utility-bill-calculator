@@ -11,6 +11,9 @@ import {
   BILL_TRANS,
   COMMERCIAL_TRANS,
   ELECTRICITY_TRANS,
+  ISSUED_DATE_TRANS,
+  MONTH_LISTS_TRANS,
+  MONTH_TRANS,
   RESIDENTIAL_TRANS,
   RESIDENT_NAME_TRANS,
   WATER_TRANS,
@@ -19,8 +22,14 @@ import { BILL_CATEGORY, BILL_TYPE_ENUM } from "../utils/constant";
 
 export default function CustomerDetails() {
   const nameReducer = useSelector((state) => state.nameReducer);
-  const billTypeTrans = nameReducer.billType === BILL_TYPE_ENUM.ELECTRICITY ? ELECTRICITY_TRANS: WATER_TRANS;
-  const customerCategoryTrans = nameReducer.customerCategory === BILL_CATEGORY.COMMERCIAL ? COMMERCIAL_TRANS : RESIDENTIAL_TRANS;
+  const billTypeTrans =
+    nameReducer.billType === BILL_TYPE_ENUM.ELECTRICITY
+      ? ELECTRICITY_TRANS
+      : WATER_TRANS;
+  const customerCategoryTrans =
+    nameReducer.customerCategory === BILL_CATEGORY.COMMERCIAL
+      ? COMMERCIAL_TRANS
+      : RESIDENTIAL_TRANS;
   return (
     <Card sx={{ minWidth: 275 }} variant="outlined">
       <CardContent style={{ textAlign: "center" }}>
@@ -31,12 +40,22 @@ export default function CustomerDetails() {
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {APARTMENT_TRANS[nameReducer.language]} : {nameReducer.apartment}
         </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          {ISSUED_DATE_TRANS[nameReducer.language]} : {new Date().toLocaleDateString()}
+        </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">
-          {billTypeTrans[nameReducer.language] + " "+ 
+          {billTypeTrans[nameReducer.language] +
+            " " +
             BILL_TRANS[nameReducer.language]}
-          - {customerCategoryTrans[nameReducer.language]}
+          -{" "}
+          {customerCategoryTrans[nameReducer.language] +
+            "(" +
+            MONTH_LISTS_TRANS[nameReducer.language][nameReducer.month] +
+            " " +
+            MONTH_TRANS[nameReducer.language] +
+            ")"}
         </Button>
       </CardActions>
     </Card>

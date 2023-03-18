@@ -1,111 +1,145 @@
 export const UTILITY_BILL_CALCULATOR_TRANS = {
-    en: 'Utility Bill Calculator',
-    sn: 'උපයෝගිතා බිල්පත් කැල්ක්යුලේටරය',
+  en: "Utility Bill Calculator",
+  sn: "උපයෝගිතා බිල්පත් කැල්ක්යුලේටරය",
 };
 
 export const RESIDENT_NAME_TRANS = {
-    en: 'Resident Name',
-    sn: 'පදිංචි නම',
-}
+  en: "Resident Name",
+  sn: "පදිංචි නම",
+};
 
 export const APARTMENT_TRANS = {
-    en: 'Apartment',
-    sn: 'මහල් නිවාසය',
-}
+  en: "Apartment",
+  sn: "මහල් නිවාසය",
+};
 
 export const BILL_TYPE_TRANS = {
-    en: 'Bill Type',
-    sn: 'බිල් වර්ගය',
-}
+  en: "Bill Type",
+  sn: "බිල් වර්ගය",
+};
 
 export const CUSTOMER_CATEGORY_TRANS = {
-    en: 'Customer Category',
-    sn: 'පාරිභෝගික කාණ්ඩය',
-}
+  en: "Customer Category",
+  sn: "පාරිභෝගික කාණ්ඩය",
+};
 
 export const UNIT_USAGE_TRANS = {
-    en: 'Unit Usage',
-    sn: 'ඒකක භාවිතය',
-}
+  en: "Unit Usage",
+  sn: "ඒකක භාවිතය",
+};
 
 export const CALCULATE_TRANS = {
-    en: 'Calculate',
-    sn: 'ගණනය කරන්න'
-}
+  en: "Calculate",
+  sn: "ගණනය කරන්න",
+};
 
 export const RANGE_TRANS = {
-    en: 'Range',
-    sn: 'පරාසය'
-}
+  en: "Range",
+  sn: "පරාසය",
+};
 
 export const PRICE_UNIT_TRANS = {
-    en: 'Price/Unit',
-    sn: 'මිල/ඒකකය'
-}
+  en: "Price/Unit",
+  sn: "මිල/ඒකකය",
+};
 
 export const UNIT_TRANS = {
-    en: 'Unit',
-    sn: 'ඒකකය'
-}
+  en: "Unit",
+  sn: "ඒකකය",
+};
 
 export const BILL_TRANS = {
-    en: 'Bill',
-    sn: 'බිල්පත්'
-}
+  en: "Bill",
+  sn: "බිල්පත්",
+};
 
 export const TOTAL_UNIT_USAGE_TRANS = {
-    en: 'Total Unit Usage',
-    sn: 'මුළු ඒකක භාවිතය'
-}
+  en: "Total Unit Usage",
+  sn: "මුළු ඒකක භාවිතය",
+};
 
 export const FIXED_CHARGE_TRANS = {
-    en: 'Fixed Charge',
-    sn: 'ස්ථාවර ගාස්තුව'
-}
+  en: "Fixed Charge",
+  sn: "ස්ථාවර ගාස්තුව",
+};
 
 export const RS_TRANS = {
-    en: '(Rs)',
-    sn: '(රුපියල්)'
-}
+  en: "(Rs)",
+  sn: "(රුපියල්)",
+};
 
 export const TOTAL_TRANS = {
-    en: 'Total',
-    sn: 'මුළු'
-}
+  en: "Total",
+  sn: "මුළු",
+};
 
 export const TAX_TRANS = {
-    en: 'Tax',
-    sn: 'බද්ද'
-}
+  en: "Tax",
+  sn: "බද්ද",
+};
 
 export const GRANT_TOTAL_TRANS = {
-    en: 'Total amount to pay',
-    sn: 'ගෙවිය යුතු මුළු මුදල'
-}
+  en: "Total amount to pay",
+  sn: "ගෙවිය යුතු මුළු මුදල",
+};
 
 export const ISSUED_DATE_TRANS = {
-    en: 'Issued Date',
-    sn: 'නිකුත් කළ දිනය'
-}
+  en: "Issued Date",
+  sn: "නිකුත් කළ දිනය",
+};
 
 export const COMMERCIAL_TRANS = {
-    en: 'Commercial',
-    sn: 'වාණිජ'
-}
+  en: "Commercial",
+  sn: "වාණිජ",
+};
 
 export const RESIDENTIAL_TRANS = {
-    en: 'Residential',
-    sn: 'නේවාසික'
-}
+  en: "Residential",
+  sn: "නේවාසික",
+};
 
 export const ELECTRICITY_TRANS = {
-    en: 'Electricity',
-    sn: 'විදුලි'
-}
+  en: "Electricity",
+  sn: "විදුලි",
+};
 
 export const WATER_TRANS = {
-    en: 'Water',
-    sn: 'ජල'
-}
+  en: "Water",
+  sn: "ජල",
+};
 
+export const MONTH_LISTS_TRANS = {
+  en: {
+    JANUARY: "January",
+    FEBRUARY: "February",
+    MARCH: "March",
+    APRIL: "April",
+    MAY: "May",
+    JUNE: "June",
+    JULY: "July",
+    AUGUST: "August",
+    SEPTEMBER: "September",
+    OCTOBER: "October",
+    NOVEMBER: "November",
+    DECEMBER: "December",
+  },
+  sn: {
+    JANUARY: "ජනවාරි",
+    FEBRUARY: "පෙබරවාරි",
+    MARCH: "මාර්තු",
+    APRIL: "අප්රේල්",
+    MAY: "මැයි",
+    JUNE: "ජූනි",
+    JULY: "ජුලි",
+    AUGUST: "අගෝස්තු",
+    SEPTEMBER: "සැප්තැම්බර්",
+    OCTOBER: "ඔක්තෝම්බර්",
+    NOVEMBER: "නොවැම්බර්",
+    DECEMBER: "දෙසැම්බර්",
+  },
+};
 
+export const MONTH_TRANS = {
+  en: "Month",
+  sn: "මස",
+};
