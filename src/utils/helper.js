@@ -1,30 +1,33 @@
 import {
   BILL_CATEGORY,
   BILL_TYPE_ENUM,
-  commercialElectricityBillTariff,
-  commercialWaterBillTariff,
-  residentialElectricityBillTariff,
-  residentialWaterBillTariff,
+  COMMERCIAL_ELECTRICITY_TARIFF,
+  COMMERCIAL_WATER_TARIFF,
+  RESIDENTIAL_ELECTRICITY_TARIFF_ABOVE_SIXTY,
+  RESIDENTIAL_ELECTRICITY_TARIFF_BELOW_SIXTY,
+  RESIDENTIAL_WATER_TARIFF,
 } from "./constant";
 
-export const selectTariff = (billType, category) => {
+export const selectTariff = (billType, category, unitUsage) => {
   if (
     billType === BILL_TYPE_ENUM.ELECTRICITY &&
     category === BILL_CATEGORY.COMMERCIAL
   ) {
-    return commercialElectricityBillTariff;
+    return COMMERCIAL_ELECTRICITY_TARIFF;
   } else if (
     billType === BILL_TYPE_ENUM.ELECTRICITY &&
     category === BILL_CATEGORY.RESIDENTIAL
   ) {
-    return residentialElectricityBillTariff;
+    return unitUsage > 60
+      ? RESIDENTIAL_ELECTRICITY_TARIFF_ABOVE_SIXTY
+      : RESIDENTIAL_ELECTRICITY_TARIFF_BELOW_SIXTY;
   } else if (
     billType === BILL_TYPE_ENUM.WATER &&
     category === BILL_CATEGORY.COMMERCIAL
   ) {
-    return commercialWaterBillTariff;
+    return COMMERCIAL_WATER_TARIFF;
   } else {
-    return residentialWaterBillTariff;
+    return RESIDENTIAL_WATER_TARIFF;
   }
 };
 
@@ -33,7 +36,7 @@ export const ccyFormat = (num) => {
 };
 
 export const calculate = (unitUsage, billType, category) => {
-  const tariff = selectTariff(billType, category);
+  const tariff = selectTariff(billType, category, unitUsage);
   let index = 0;
   let qty = 0;
   let rows = [];
